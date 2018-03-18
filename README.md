@@ -25,6 +25,4 @@ This will start a VM with following configuration:
 
 Jenkins is running on port 8080 inside the started VM. To access it from your host machine, you'll have to add port forwarding to the generated Vagrantfile (ie. config.vm.network "forwarded_port", guest: 8080, host: 8080)
 
-Git, TestNG and Slack Jenkins plugins will be installed.
-
 Generated Vagrantfile can be further configured (for port forwarding, folder sharing etc).
