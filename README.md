@@ -1,1 +1,30 @@
-Haris M.
+Description
+This Vagrant box is used for starting a CI environment. It contains essential CI tools such as Java JDK, Maven, Selenium, Jenkins, Xvfb and Firefox. With this, a fully functional environement for testing and integration jobs can be easily created.
+
+CI Vagrant Box uses Puppet for provisioning required services and components and is configurable. There are two ways of using this box:
+
+Using already provisioned and packed Vagrant Box
+Provisioning a new box
+Requirements
+Vagrant 1.8.1 or later
+This is the only requirement for running Jenkins CI Box. Latest Vagrant version can be found on: https://www.vagrantup.com/downloads.html.
+
+How to use
+Using Jenkins CI Vagrant Box
+There are two ways of using Jenkins CI Vagrant box:
+
+Start a preconfigured, ready to use VM
+Provisioning a new Box
+First approach is easier and faster, it will get the already configured CI running with just two commands. The second approach is better if additional configuration is needed for your CI environment, but requires provisioning a new Vagrant environment.
+
+Plug & Play
+To start a preconfigured Jenkins CI VM, following command should be executed:
+vagrant init ubuntu/trusty64 && vagrant up
+
+This will start a VM with following configuration:
+
+Jenkins is running on port 8080 inside the started VM. To access it from your host machine, you'll have to add port forwarding to the generated Vagrantfile (ie. config.vm.network "forwarded_port", guest: 8080, host: 8080)
+
+Git, TestNG and Slack Jenkins plugins will be installed.
+
+Generated Vagrantfile can be further configured (for port forwarding, folder sharing etc).
